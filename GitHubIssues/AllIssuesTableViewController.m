@@ -7,6 +7,7 @@
 //
 
 #import "AllIssuesTableViewController.h"
+#import "IssueTableViewCell.h"
 
 @interface AllIssuesTableViewController ()
 
@@ -14,14 +15,60 @@
 
 @implementation AllIssuesTableViewController
 
+- (void)loadInitialData {
+    /* Download all open issues using GitHub API */
+    
+    // GitHub API url
+    NSString *url = @"https://api.github.com/repos/uchicago-mobi/2015-Winter-Forum/issues?state=all";
+    
+    // Create NSUrlSession
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    // Create data download taks
+    [[session dataTaskWithURL:[NSURL URLWithString:url]
+            completionHandler:^(NSData *data,NSURLResponse *response,NSError *error) {
+                
+                NSError *jsonError;
+                self.issueData = [NSJSONSerialization JSONObjectWithData:data
+                                                                 options:NSJSONReadingAllowFragments
+                                                                   error:&jsonError];
+                // Log the data for debugging
+                NSLog(@"DownloadeData:%@",self.issueData);
+                
+                // Use dispatch_async to update the table on the main thread
+                // Remember that NSURLSession is downloading in the background
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.tableView reloadData];
+                });
+            }] resume];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.issueData = [[NSMutableArray alloc] init]; //initialize the array
+    [self loadInitialData]; //now, populate the array!
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //Refresh Controller for this table view controller
+    UIRefreshControl *pullToRefresh = [[UIRefreshControl alloc] init];
+    [pullToRefresh addTarget:self action:@selector(refreshTable)
+            forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = pullToRefresh;
+    
+}
+
+
+- (void)refreshTable {
+    NSLog(@"Pull To Refresh");
+    
+    //Reload the data - repopulate the issuesData array! ***
+    [self loadInitialData];
+    
+    //Reload the table
+    [self.tableView reloadData];
+    
+    //Stop the spinner
+    [self.refreshControl endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,26 +79,27 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.issueData count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueTableCell" forIndexPath:indexPath];
+    IssueTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueTableCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    //need to parse issueData array now and populate the cell's custom title, author, date, and status image properties!
+    cell.title.text = @"hiiii";
+    cell.author.text = @"author";
+    cell.date.text = @"1/1/1111";
+    [cell.statusImage setImage:[UIImage imageNamed:@"red.png"]];
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
