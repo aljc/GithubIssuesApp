@@ -15,6 +15,9 @@
 		31091F1A1A79DD8E00763E84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31091F191A79DD8E00763E84 /* Images.xcassets */; };
 		31091F1D1A79DD8E00763E84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31091F1B1A79DD8E00763E84 /* LaunchScreen.xib */; };
 		31091F291A79DD8E00763E84 /* GitHubIssuesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31091F281A79DD8E00763E84 /* GitHubIssuesTests.m */; };
+		31091F341A79E79300763E84 /* IssueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31091F331A79E79300763E84 /* IssueTableViewController.m */; };
+		31091F3A1A79E8E100763E84 /* AllIssuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31091F391A79E8E100763E84 /* AllIssuesTableViewController.m */; };
+		31091F3D1A79EB8A00763E84 /* IssueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31091F3C1A79EB8A00763E84 /* IssueTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,12 @@
 		31091F221A79DD8E00763E84 /* GitHubIssuesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubIssuesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31091F271A79DD8E00763E84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31091F281A79DD8E00763E84 /* GitHubIssuesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitHubIssuesTests.m; sourceTree = "<group>"; };
+		31091F321A79E79300763E84 /* IssueTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueTableViewController.h; sourceTree = "<group>"; };
+		31091F331A79E79300763E84 /* IssueTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueTableViewController.m; sourceTree = "<group>"; };
+		31091F381A79E8E100763E84 /* AllIssuesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllIssuesTableViewController.h; sourceTree = "<group>"; };
+		31091F391A79E8E100763E84 /* AllIssuesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllIssuesTableViewController.m; sourceTree = "<group>"; };
+		31091F3B1A79EB8A00763E84 /* IssueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueTableViewCell.h; sourceTree = "<group>"; };
+		31091F3C1A79EB8A00763E84 /* IssueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,11 +95,17 @@
 			children = (
 				31091F0D1A79DD8E00763E84 /* AppDelegate.h */,
 				31091F0E1A79DD8E00763E84 /* AppDelegate.m */,
-				31091F101A79DD8E00763E84 /* FirstViewController.h */,
 				31091F111A79DD8E00763E84 /* FirstViewController.m */,
 				31091F131A79DD8E00763E84 /* SecondViewController.h */,
 				31091F141A79DD8E00763E84 /* SecondViewController.m */,
 				31091F161A79DD8E00763E84 /* Main.storyboard */,
+				31091F381A79E8E100763E84 /* AllIssuesTableViewController.h */,
+				31091F101A79DD8E00763E84 /* FirstViewController.h */,
+				31091F391A79E8E100763E84 /* AllIssuesTableViewController.m */,
+				31091F321A79E79300763E84 /* IssueTableViewController.h */,
+				31091F331A79E79300763E84 /* IssueTableViewController.m */,
+				31091F3B1A79EB8A00763E84 /* IssueTableViewCell.h */,
+				31091F3C1A79EB8A00763E84 /* IssueTableViewCell.m */,
 				31091F191A79DD8E00763E84 /* Images.xcassets */,
 				31091F1B1A79DD8E00763E84 /* LaunchScreen.xib */,
 				31091F091A79DD8E00763E84 /* Supporting Files */,
@@ -225,9 +240,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				31091F151A79DD8E00763E84 /* SecondViewController.m in Sources */,
+				31091F341A79E79300763E84 /* IssueTableViewController.m in Sources */,
+				31091F3D1A79EB8A00763E84 /* IssueTableViewCell.m in Sources */,
 				31091F0F1A79DD8E00763E84 /* AppDelegate.m in Sources */,
 				31091F121A79DD8E00763E84 /* FirstViewController.m in Sources */,
 				31091F0C1A79DD8E00763E84 /* main.m in Sources */,
+				31091F3A1A79E8E100763E84 /* AllIssuesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
