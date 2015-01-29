@@ -227,7 +227,7 @@
                             <outlet property="delegate" destination="kWk-bY-a67" id="4eP-dU-Vpv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="aQD-La-Gck"/>
+                    <navigationItem key="navigationItem" title="All Issues" id="aQD-La-Gck"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mB-B7-mes" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
