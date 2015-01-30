@@ -48,7 +48,7 @@
         <!--CircleViewController-->
         <scene sceneID="MOA-sJ-NFa">
             <objects>
-                <viewController title="CircleViewController" id="e8i-qH-TdA" sceneMemberID="viewController">
+                <viewController title="CircleViewController" id="e8i-qH-TdA" customClass="CirleViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zip-pg-mEJ"/>
                         <viewControllerLayoutGuide type="bottom" id="iEz-Vn-Mxe"/>
@@ -150,7 +150,15 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="C1M-A5-kA1">
-                        <barButtonItem key="rightBarButtonItem" title="Open in Safari" id="hum-6J-IbP"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="o5H-yQ-SRo">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rGR-RJ-JOE">
+                                <rect key="frame" x="276" y="7" width="98" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Open in Safari">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -219,6 +227,7 @@
                                     <outlet property="date" destination="ERJ-Dh-UTw" id="CqE-Je-Pjv"/>
                                     <outlet property="statusImage" destination="1Nx-cx-1Jw" id="tLz-dw-vOf"/>
                                     <outlet property="title" destination="Uqs-hF-IwV" id="gc6-bv-QU8"/>
+                                    <segue destination="kJs-8b-ie2" kind="show" id="y6b-kD-CyJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -239,4 +248,7 @@
         <image name="flow_chart-50" width="30" height="30"/>
         <image name="survey-50" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="y6b-kD-CyJ"/>
+    </inferredMetricsTieBreakers>
 </document>

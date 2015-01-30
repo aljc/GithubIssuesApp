@@ -18,6 +18,7 @@
 		31091F341A79E79300763E84 /* IssueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31091F331A79E79300763E84 /* IssueTableViewController.m */; };
 		31091F3A1A79E8E100763E84 /* AllIssuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31091F391A79E8E100763E84 /* AllIssuesTableViewController.m */; };
 		31091F3D1A79EB8A00763E84 /* IssueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31091F3C1A79EB8A00763E84 /* IssueTableViewCell.m */; };
+		317E067D1A7B60CA00C4BAB1 /* CirleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 317E067C1A7B60CA00C4BAB1 /* CirleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		31091F391A79E8E100763E84 /* AllIssuesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllIssuesTableViewController.m; sourceTree = "<group>"; };
 		31091F3B1A79EB8A00763E84 /* IssueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueTableViewCell.h; sourceTree = "<group>"; };
 		31091F3C1A79EB8A00763E84 /* IssueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueTableViewCell.m; sourceTree = "<group>"; };
+		317E067B1A7B60CA00C4BAB1 /* CirleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CirleViewController.h; sourceTree = "<group>"; };
+		317E067C1A7B60CA00C4BAB1 /* CirleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CirleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,8 @@
 				31091F131A79DD8E00763E84 /* SecondViewController.h */,
 				31091F141A79DD8E00763E84 /* SecondViewController.m */,
 				31091F161A79DD8E00763E84 /* Main.storyboard */,
+				317E067B1A7B60CA00C4BAB1 /* CirleViewController.h */,
+				317E067C1A7B60CA00C4BAB1 /* CirleViewController.m */,
 				31091F381A79E8E100763E84 /* AllIssuesTableViewController.h */,
 				31091F391A79E8E100763E84 /* AllIssuesTableViewController.m */,
 				31091F101A79DD8E00763E84 /* FirstViewController.h */,
@@ -245,6 +250,7 @@
 				31091F0F1A79DD8E00763E84 /* AppDelegate.m in Sources */,
 				31091F121A79DD8E00763E84 /* FirstViewController.m in Sources */,
 				31091F0C1A79DD8E00763E84 /* main.m in Sources */,
+				317E067D1A7B60CA00C4BAB1 /* CirleViewController.m in Sources */,
 				31091F3A1A79E8E100763E84 /* AllIssuesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +442,7 @@
 				31091F2E1A79DD8E00763E84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		31091F2F1A79DD8E00763E84 /* Build configuration list for PBXNativeTarget "GitHubIssuesTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +451,7 @@
 				31091F311A79DD8E00763E84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

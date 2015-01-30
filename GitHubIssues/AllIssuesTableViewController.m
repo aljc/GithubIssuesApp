@@ -93,10 +93,23 @@
     
     // Configure the cell...
     //need to parse issueData array now and populate the cell's custom title, author, date, and status image properties!
-    cell.title.text = @"hiiii";
-    cell.author.text = @"author";
-    cell.date.text = @"1/1/1111";
-    [cell.statusImage setImage:[UIImage imageNamed:@"red.png"]];
+    id currentArrayElement = [self.issueData objectAtIndex:indexPath.row];
+    
+    //NSLog(@"array: %@", [self.issueData objectAtIndex:indexPath.row]);
+    cell.title.text = [currentArrayElement objectForKey:@"title"];
+    cell.author.text = [[currentArrayElement objectForKey:@"user"] objectForKey:@"login"];
+    cell.date.text = [[currentArrayElement objectForKey:@"created_at"] substringToIndex:10];
+    
+    NSString *state = [currentArrayElement objectForKey:@"state"];
+    
+    //issue is open
+    if ([state isEqualToString: @"open"]) {
+        [cell.statusImage setImage:[UIImage imageNamed:@"green.png"]];
+    }
+    //issue is closed
+    else {
+        [cell.statusImage setImage:[UIImage imageNamed:@"red.png"]];
+    }
     
     return cell;
 }
