@@ -8,6 +8,8 @@
 
 #import "IssueTableViewController.h"
 #import "IssueTableViewCell.h"
+#import "MyDataFetchClass.h"
+#import "IssueDetailViewController.h"
 
 @interface IssueTableViewController ()
 
@@ -16,38 +18,35 @@
 @implementation IssueTableViewController
 
 - (void)loadInitialData {
-    /* Download all open issues using GitHub API */
-    
-    // GitHub API url
-    NSString *url = @"https://api.github.com/repos/uchicago-mobi/2015-Winter-Forum/issues?state=open";
-    
-    // Create NSUrlSession
-    NSURLSession *session = [NSURLSession sharedSession];
-    
-    // Create data download taks
-    [[session dataTaskWithURL:[NSURL URLWithString:url]
-            completionHandler:^(NSData *data,NSURLResponse *response,NSError *error) {
-                
-                NSError *jsonError;
-                self.issueData = [NSJSONSerialization JSONObjectWithData:data
-                                                                 options:NSJSONReadingAllowFragments
-                                                                   error:&jsonError];
-                // Log the data for debugging
-                NSLog(@"DownloadeData:%@",self.issueData);
-                
-                // Use dispatch_async to update the table on the main thread
-                // Remember that NSURLSession is downloading in the background
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.tableView reloadData];
-                });
-            }] resume];
-}
+    MyDataFetchClass *fetchData = [[MyDataFetchClass alloc] init];
+    [fetchData fetchOpenIssues:@"open" completion:^(NSMutableArray *myIssueData) {
+        
+        if (myIssueData) {
+            self.issueData = myIssueData;
+            
+            //success! Update UI here
+            [self.tableView reloadData];
+            
+            //Stop the spinner
+            [self.refreshControl endRefreshing];
+        }
+        else{
+            //something went wrong. no data?
+            NSLog(@"Error: data not downloaded correctly");
+            
+            //Stop the spinner
+            [self.refreshControl endRefreshing];
+        }
+    }];
+  }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.issueData = [[NSMutableArray alloc] init]; //initialize the array
     [self loadInitialData]; //now, populate the array!
+    
+    
     
     //Refresh Controller for this table view controller
     UIRefreshControl *pullToRefresh = [[UIRefreshControl alloc] init];
@@ -62,12 +61,6 @@
     
     //Reload the data - repopulate the issuesData array! ***
     [self loadInitialData];
-    
-    //Reload the table
-    [self.tableView reloadData];
-    
-    //Stop the spinner
-    [self.refreshControl endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -153,14 +146,13 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    IssueDetailViewController *dest = [segue destinationViewController];
+    dest.tappedCell = (IssueTableViewCell *)sender;
+    NSLog(@"tapped cell: %@", dest.tappedCell.title.text);
 }
-*/
 
 @end

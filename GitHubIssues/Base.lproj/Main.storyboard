@@ -48,7 +48,7 @@
         <!--CircleViewController-->
         <scene sceneID="MOA-sJ-NFa">
             <objects>
-                <viewController title="CircleViewController" id="e8i-qH-TdA" customClass="CirleViewController" sceneMemberID="viewController">
+                <viewController title="CircleViewController" id="e8i-qH-TdA" customClass="CircleViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zip-pg-mEJ"/>
                         <viewControllerLayoutGuide type="bottom" id="iEz-Vn-Mxe"/>
@@ -57,13 +57,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18 Open Issues" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVR-CP-JJr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Open Issues" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVR-CP-JJr">
                                 <rect key="frame" x="127" y="264" width="120" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23 Closed Issues" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zR-n8-fyx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Closed Issues" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zR-n8-fyx">
                                 <rect key="frame" x="124" y="312" width="132" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -73,6 +73,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Status" image="doughnut_chart-50" id="C06-rJ-CUi"/>
+                    <connections>
+                        <outlet property="closedIssues" destination="4zR-n8-fyx" id="kcd-aq-paw"/>
+                        <outlet property="openIssues" destination="aVR-CP-JJr" id="Yvo-1B-4G7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S5S-Yd-2Oh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -138,7 +142,7 @@
         <!--IssueDetailViewController-->
         <scene sceneID="Cm7-zO-TGY">
             <objects>
-                <viewController title="IssueDetailViewController" id="kJs-8b-ie2" sceneMemberID="viewController">
+                <viewController title="IssueDetailViewController" id="kJs-8b-ie2" customClass="IssueDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="By8-VA-qvL"/>
                         <viewControllerLayoutGuide type="bottom" id="5YV-RO-Bio"/>
@@ -146,17 +150,43 @@
                     <view key="view" contentMode="scaleToFill" id="5tr-jY-Mas">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Best Coding Practices" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVx-vv-bIu">
+                                <rect key="frame" x="16" y="90" width="343" height="75"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="January 29, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4i-v0-CYR">
+                                <rect key="frame" x="106" y="184" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o46-wp-b3i">
+                                <rect key="frame" x="16" y="179" width="75" height="75"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bob123 opened this issue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="273-ij-ZzJ">
+                                <rect key="frame" x="106" y="227" width="269" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="C1M-A5-kA1">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="o5H-yQ-SRo">
+                        <barButtonItem key="rightBarButtonItem" id="o5H-yQ-SRo">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rGR-RJ-JOE">
                                 <rect key="frame" x="276" y="7" width="98" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Open in Safari">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="openInSafari:" destination="kJs-8b-ie2" eventType="touchUpInside" id="ywh-Q3-7T9"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -249,6 +279,6 @@
         <image name="survey-50" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="y6b-kD-CyJ"/>
+        <segue reference="X9R-Lc-b9Q"/>
     </inferredMetricsTieBreakers>
 </document>
