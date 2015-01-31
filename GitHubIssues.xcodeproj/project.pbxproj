@@ -18,6 +18,7 @@
 		31091F341A79E79300763E84 /* IssueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31091F331A79E79300763E84 /* IssueTableViewController.m */; };
 		31091F3A1A79E8E100763E84 /* AllIssuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31091F391A79E8E100763E84 /* AllIssuesTableViewController.m */; };
 		31091F3D1A79EB8A00763E84 /* IssueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31091F3C1A79EB8A00763E84 /* IssueTableViewCell.m */; };
+		3185654E1A7C86BD00409BAF /* DrawCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3185654D1A7C86BD00409BAF /* DrawCircle.m */; };
 		31BBCF7C1A7C59EC0072AB85 /* CircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BBCF7B1A7C59EC0072AB85 /* CircleViewController.m */; };
 		31BBCF7F1A7C5CBF0072AB85 /* IssueDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BBCF7E1A7C5CBF0072AB85 /* IssueDetailViewController.m */; };
 		31BBCF821A7C612E0072AB85 /* MyDataFetchClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BBCF811A7C612E0072AB85 /* MyDataFetchClass.m */; };
@@ -56,6 +57,8 @@
 		31091F3B1A79EB8A00763E84 /* IssueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueTableViewCell.h; sourceTree = "<group>"; };
 		31091F3C1A79EB8A00763E84 /* IssueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueTableViewCell.m; sourceTree = "<group>"; };
 		3185654A1A7C853800409BAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3185654C1A7C86BD00409BAF /* DrawCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCircle.h; sourceTree = "<group>"; };
+		3185654D1A7C86BD00409BAF /* DrawCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawCircle.m; sourceTree = "<group>"; };
 		31BBCF7A1A7C59EC0072AB85 /* CircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleViewController.h; sourceTree = "<group>"; };
 		31BBCF7B1A7C59EC0072AB85 /* CircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleViewController.m; sourceTree = "<group>"; };
 		31BBCF7D1A7C5CBF0072AB85 /* IssueDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueDetailViewController.h; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 				31BBCF811A7C612E0072AB85 /* MyDataFetchClass.m */,
 				31BBCF7A1A7C59EC0072AB85 /* CircleViewController.h */,
 				31BBCF7B1A7C59EC0072AB85 /* CircleViewController.m */,
+				3185654C1A7C86BD00409BAF /* DrawCircle.h */,
+				3185654D1A7C86BD00409BAF /* DrawCircle.m */,
 				31091F101A79DD8E00763E84 /* FirstViewController.h */,
 				31091F321A79E79300763E84 /* IssueTableViewController.h */,
 				31091F331A79E79300763E84 /* IssueTableViewController.m */,
@@ -257,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31091F151A79DD8E00763E84 /* SecondViewController.m in Sources */,
+				3185654E1A7C86BD00409BAF /* DrawCircle.m in Sources */,
 				31BBCF821A7C612E0072AB85 /* MyDataFetchClass.m in Sources */,
 				31091F341A79E79300763E84 /* IssueTableViewController.m in Sources */,
 				31BBCF7C1A7C59EC0072AB85 /* CircleViewController.m in Sources */,
