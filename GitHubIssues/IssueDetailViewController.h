@@ -13,9 +13,10 @@
 
 @property (strong,nonatomic) IssueTableViewCell *tappedCell;
 
-//@property (weak, nonatomic) IBOutlet UILabel *detailTitle;
-//@property (weak, nonatomic) IBOutlet UILabel *detailDate;
-//@property (weak, nonatomic) IBOutlet UILabel *detailAuthor;
-//@property (weak, nonatomic) IBOutlet UIImageView *detailStatusImage;
+@property (weak, nonatomic) IBOutlet UITextView *titleText;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *statusImageView;
+
 
 @end

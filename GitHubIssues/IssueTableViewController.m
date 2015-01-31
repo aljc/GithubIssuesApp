@@ -103,10 +103,8 @@
         [cell.statusImage setImage:[UIImage imageNamed:@"red.png"]];
     }
     
-    
-//    IssueTableViewCell *issueTableViewCell = [self.issueData objectAtIndex:indexPath.row];
-//    cell.textLabel.text = issueTableViewCell.title.text;
-    
+    cell.URL = [currentArrayElement objectForKey:@"html_url"];
+       
     // Configure the cell...
     
     return cell;

@@ -15,18 +15,19 @@
 @implementation IssueDetailViewController
 
 
-- (IBAction)showIssueDetail:(UIStoryboardSegue *)segue {
+- (void)showIssueDetail {
     
-    //self.detailTitle.text = self.tappedCell.title.text;
-    //self.detailAuthor.text = [self.tappedCell.author.text stringByAppendingString:@" opened this issue"];
-    //self.detailDate.text = self.tappedCell.date.text;
-    //self.detailStatusImage = self.tappedCell.statusImage;
+    self.titleText.text = self.tappedCell.title.text;
+    self.authorLabel.text = [self.tappedCell.author.text stringByAppendingString:@" opened this issue"];
+    self.dateLabel.text = self.tappedCell.date.text;
+    [self.statusImageView setImage:self.tappedCell.statusImage.image];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view
-    
+
+    [self showIssueDetail];
 }
 
 - (void)didReceiveMemoryWarning {
