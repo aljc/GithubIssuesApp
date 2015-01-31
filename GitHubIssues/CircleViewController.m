@@ -18,6 +18,26 @@
 
 @implementation CircleViewController
 
+//source: http://www.techotopia.com/index.php/An_iOS_7_Graphics_Tutorial_using_Core_Graphics_and_Core_Image#Locating_the_drawRect_Method_in_the_UIView_Subclass
+
+- (void)drawRect:(CGRect)rect {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(context, 4.0);
+    CGContextSetStrokeColorWithColor(context,
+                                     [UIColor blueColor].CGColor);
+    CGRect rectangle = CGRectMake(60,170,200,80);
+    CGContextAddEllipseInRect(context, rectangle);
+    CGContextStrokePath(context);
+    
+//    CGContextRef ctx = UIGraphicsGetCurrentContext();
+//    
+//    // Draw a blue hollow circle
+//    CGContextSetRGBStrokeColor(ctx, 0, 0, 255, 1);
+//    CGContextSetLineWidth(ctx, 10);
+//    CGContextStrokeEllipseInRect(ctx,
+//                                 CGRectMake(500, 600, 200, 200));
+}
+
 - (void)updateLabels {
     self.openIssues.text = [NSString stringWithFormat:@"%ld open issues", self.open];
     self.closedIssues.text = [NSString stringWithFormat:@"%ld closed issues", self.closed];
@@ -67,6 +87,8 @@
     
     //note - can't update the labels here because if the block is running concurrently with this,
     //then we won't know our counts until the block is finished!  so must call updateLabels from the block itself.
+    
+    [self.view setNeedsDisplay];
   }
 
 /*

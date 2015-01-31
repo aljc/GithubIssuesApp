@@ -55,6 +55,7 @@
 		31091F391A79E8E100763E84 /* AllIssuesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllIssuesTableViewController.m; sourceTree = "<group>"; };
 		31091F3B1A79EB8A00763E84 /* IssueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueTableViewCell.h; sourceTree = "<group>"; };
 		31091F3C1A79EB8A00763E84 /* IssueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueTableViewCell.m; sourceTree = "<group>"; };
+		3185654A1A7C853800409BAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		31BBCF7A1A7C59EC0072AB85 /* CircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleViewController.h; sourceTree = "<group>"; };
 		31BBCF7B1A7C59EC0072AB85 /* CircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleViewController.m; sourceTree = "<group>"; };
 		31BBCF7D1A7C5CBF0072AB85 /* IssueDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueDetailViewController.h; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		31091EFD1A79DD8E00763E84 = {
 			isa = PBXGroup;
 			children = (
+				3185654A1A7C853800409BAF /* CoreGraphics.framework */,
 				31091F081A79DD8E00763E84 /* GitHubIssues */,
 				31091F251A79DD8E00763E84 /* GitHubIssuesTests */,
 				31091F071A79DD8E00763E84 /* Products */,
