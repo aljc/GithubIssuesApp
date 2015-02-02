@@ -53,7 +53,7 @@
                         <viewControllerLayoutGuide type="top" id="zip-pg-mEJ"/>
                         <viewControllerLayoutGuide type="bottom" id="iEz-Vn-Mxe"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="k8L-cu-zWs">
+                    <view key="view" contentMode="scaleToFill" id="k8L-cu-zWs" customClass="DrawCircle">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
