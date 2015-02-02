@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DrawCircle : UIView
-
+@property NSInteger open;
+@property NSInteger closed;
 @end

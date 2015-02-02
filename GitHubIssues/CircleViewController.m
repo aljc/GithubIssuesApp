@@ -12,19 +12,20 @@
 
 @interface CircleViewController ()
 
-@property NSInteger open;
-@property NSInteger closed;
-
 @end
 
 @implementation CircleViewController
 
-//source: http://www.techotopia.com/index.php/An_iOS_7_Graphics_Tutorial_using_Core_Graphics_and_Core_Image#Locating_the_drawRect_Method_in_the_UIView_Subclass
-
-
 - (void)updateLabels {
     self.openIssues.text = [NSString stringWithFormat:@"%ld open issues", self.open];
     self.closedIssues.text = [NSString stringWithFormat:@"%ld closed issues", self.closed];
+    
+    //pass these counts to our custom view, DrawCircle
+    self.customView.open = self.open;
+    self.customView.closed = self.closed;
+    
+    //**Note: must refresh the view to register the new counts!
+    [self.view setNeedsDisplay];
 }
 
 - (void)countIssues {
@@ -72,8 +73,6 @@
     //note - can't update the labels here because if the block is running concurrently with this,
     //then we won't know our counts until the block is finished!  so must call updateLabels from the block itself.
     
-    DrawCircle *drawCircle = [[DrawCircle alloc]init];
-    [self.view addSubview:drawCircle];
   }
 
 /*
